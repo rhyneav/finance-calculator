@@ -1,55 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="style.css" type="text/css" />
     </head>
     <body>
         <table>
             <tr>
                 <td>N=</td>
-                <td><input type="number" id="N"/></td>
-                <td><button onclick="PresentValue()">Calculate</button></td>
+                <td><input type="number" id="number"/></td>
+                <td><button>Calculate</button></td>
             </tr>
             <tr>
                 <td>I%=</td>
-                <td><input type="number" id="I"/></td>
+                <td><input type="number" id="interest"/></td>
                 <td><button>Calculate</button></td>
             </tr>
             <tr>
                 <td>PV=</td>
-                <td><input type="number" id="PV"/></td>
-                <td><button>Calculate</button></td>
+                <td><input type="number" id="present-value"/></td>
+                <td><button onclick="PresentValue()">Calculate</button></td>
             </tr>
             <tr>
                 <td>PMT</td>
-                <td><input type="number" id="PMT"/></td>
+                <td><input type="number" id="payment"/></td>
                 <td><button>Calculate</button></td>
             </tr>
             <tr>
                 <td>FV</td>
-                <td><input type="number" id="FV"/></td>
-                <td><button>Calculate</button></td>
-            </tr>
-            <tr>
-                <td>P/Y</td>
-                <td><input type="number" id="PY" value="1"/></td>
-                <td><button>Calculate</button></td>
-            </tr>
-            <tr>
-                <td>C/Y</td>
-                <td><input type="number" id="CY" value="1"/></td>
+                <td><input type="number" id="future-value"/></td>
                 <td><button>Calculate</button></td>
             </tr>
             <tr>
                 <td>PMT:</td>
                 <td colspan="2">
                     <form>
-                        <input type="radio" id="PMT-END" value="END" checked/>END
-                        <input type="radio" id="PMT-BEGIN" value="BEGIN"/>BEGIN
+                        <input type="radio" id="pmt-end" value="END" checked/>END
+                        <input type="radio" id="pmt-begin" value="BEGIN"/>BEGIN
                     </form>
                 </td>
             </tr>
         </table>
         
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>

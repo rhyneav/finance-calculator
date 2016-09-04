@@ -8,28 +8,28 @@ var CY;
 var BegEnd;
 
 function LoadNumbers() {
-    N = document.getElementById("N").value;
-    I = document.getElementById("I").value;
-    PV = document.getElementById("PV").value;
-    PMT = document.getElementById("PMT").value;
-    FV = document.getElementById("FV").value;
-    PY = document.getElementById("PY").value;
-    CY = document.getElementById("CY").value;
-    BegEnd = document.getElementById("BegEnd").value;
-    
+    N = document.getElementById("number").value;
     console.log(N);
+    I = document.getElementById("interest").value / 100;
+    console.log(I);
+    PV = document.getElementById("present-value").value;
+    console.log(PV);
+    PMT = document.getElementById("payment").value;
+    console.log(PMT);
+    FV = document.getElementById("future-value").value;
+    console.log(FV);
+    BegEnd = document.getElementById("number").value;
+    console.log(BegEnd);
+
 }
 
 function PresentValue() {
-    // PV = FV * [1 / (1 + i)^n]
+    // PV = FV * (1 / (1 + I)^N)
     
     LoadNumbers();
     
-    var PV = 0;
+    PV = FV * (1 / (1 + I)^N)
     
-    
-    
-    console.log("worked!")
-    
+    console.log(PV);
     return PV;
 }
