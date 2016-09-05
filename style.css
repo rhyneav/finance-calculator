@@ -27,11 +27,11 @@ button:hover {
     opacity:1; 
 }
 
-input[type="number"] {
-   height: 30px;
-   font-size: 24px;
-   border: none;
-   border-bottom: 1px solid black;
+input, select {
+    height: 30px;
+    font-size: 24px;
+    border: none;
+    border-bottom: 1px solid black;
    
     -o-transition:.25s;
     -ms-transition:.25s;
@@ -40,7 +40,7 @@ input[type="number"] {
     transition:.25s;
 }
 
-input[type="number"]:focus {
+input:focus, select:focus {
     outline: none;
     border-bottom: 1px solid #26a69a;
     box-shadow:  0px 5px 7px -5px #26a69a;
