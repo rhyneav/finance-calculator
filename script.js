@@ -5,6 +5,7 @@ window.onload = function() {
     document.getElementById("present-value").value = 0;
     document.getElementById("payment").value = 10;
     document.getElementById("future-value").value = 900;
+    
 };
 
 function clsFinanceCalculator() {
@@ -44,23 +45,42 @@ function clsFinanceCalculator() {
     this.GetPresentValue = function() {
         // PV = FV * (1 / (1 + I)^N)
         // PV = PMT * ((1 - (1 / (1 + I)^N)) / I)
-        
-        var coeff = Math.pow(1 + I, N);
     
         // Find intial present value
-        PV = FV  / coeff;
         
-        // Account for payments
+        var coeff = Math.pow(1 + I, N);
+        PV = FV  / coeff;
+
         // Multiply for if it is an annuity due
         if (AnnuityDue) {
             coeff = Math.pow(1 + I, N - 1);
-            PV += (PMT * ((1 - (1 / coeff)) / I));
-            PV = PV + PMT;
+            PV += PMT * (1 - (1 / coeff)) / I;
+            PV += PMT;
         } else {
-            PV += PMT * ((1 - (1 / coeff)) / I);
+            PV += PMT * (1 - (1 / coeff)) / I;
         }
         
         return PV;
+        
+    };
+    
+    this.GetFutureValue = function() {
+        // FV = PV * (1 + r)^n
+        
+        var coeff = Math.pow(1 + I, N);
+        
+        if (AnnuityDue) {
+            FV = PV * coeff;
+            FV += (1 + I) * PMT * ((coeff - 1) / I);
+
+        } else {
+            FV = PV * coeff;
+            FV += PMT * ((coeff - 1) / I);
+        }
+        
+        
+        FV = FV * -1;
+        return FV;
         
     };
 }
@@ -71,4 +91,12 @@ document.getElementById("btnPresentValue").addEventListener("click", function(){
     _PresentValue.SetAllValues();
     
     document.getElementById("present-value").value = _PresentValue.GetPresentValue();
+});
+
+document.getElementById("btnFutureValue").addEventListener("click", function(){
+    var _FutureValue = new clsFinanceCalculator();
+    
+    _FutureValue.SetAllValues();
+    
+    document.getElementById("future-value").value = _FutureValue.GetFutureValue();
 });
