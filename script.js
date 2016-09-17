@@ -83,6 +83,10 @@ function clsFinanceCalculator() {
         return FV;
         
     };
+    
+    this.GetPayment = function() {
+        
+    }
 }
 
 document.getElementById("btnPresentValue").addEventListener("click", function(){
