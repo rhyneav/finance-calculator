@@ -7,8 +7,10 @@
         <div class="container">
             <div class="info sizer">
                 <div class="text">
-                    <h1>This is a title</h1>
-                    <p>This is a test</p>
+                    <h1>Finance Calculator</h1>
+                    <p>An easier way to do finance calculations online.</p>
+                    <button id="extension">Download the Chrome Extension</button>
+                    <p><a id="hide-info" href="#">Hide this information</a></p>
                 </div>
             </div>
             <div class="break sizer">
@@ -16,43 +18,45 @@
                     
                 </div>
             </div>
-            <div class="data sizer">
-                <table>
-                    <tr>
-                        <td>N =</td>
-                        <td><input type="number" id="number"/></td>
-                        <td><button id="btnNumber">Calculate</button></td>
-                    </tr>
-                    <tr>
-                        <td>I% =</td>
-                        <td><input type="number" id="interest"/></td>
-                        <td><button id="btnInterest">Calculate</button></td>
-                    </tr>
-                    <tr>
-                        <td>PV =</td>
-                        <td><input type="number" id="present-value"/></td>
-                        <td><button id="btnPresentValue">Calculate</button></td>
-                    </tr>
-                    <tr>
-                        <td>PMT =</td>
-                        <td><input type="number" id="payment"/></td>
-                        <td><button id="btnPayment">Calculate</button></td>
-                    </tr>
-                    <tr>
-                        <td>FV =</td>
-                        <td><input type="number" id="future-value"/></td>
-                        <td><button id="btnFutureValue">Calculate</button></td>
-                    </tr>
-                    <tr>
-                        <td>PMT :</td>
-                        <td colspan="2">
-                            <select id="beg-or-end">
-                                <option id="pmt-end" value="END">END</option>
-                                <option id="pmt-begin" value="BEGIN">BEGIN</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+            <div class="application sizer">
+                <div class="data">
+                    <table>
+                        <tr>
+                            <td class="identifier">N =</td>
+                            <td><input type="number" id="number"/></td>
+                            <td><button id="btnNumber">Calculate</button></td>
+                        </tr>
+                        <tr>
+                            <td class="identifier">I% =</td>
+                            <td><input type="number" id="interest"/></td>
+                            <td><button id="btnInterest">Calculate</button></td>
+                        </tr>
+                        <tr>
+                            <td class="identifier">PV =</td>
+                            <td><input type="number" id="present-value"/></td>
+                            <td><button id="btnPresentValue">Calculate</button></td>
+                        </tr>
+                        <tr>
+                            <td class="identifier">PMT =</td>
+                            <td><input type="number" id="payment"/></td>
+                            <td><button id="btnPayment">Calculate</button></td>
+                        </tr>
+                        <tr>
+                            <td class="identifier">FV =</td>
+                            <td><input type="number" id="future-value"/></td>
+                            <td><button id="btnFutureValue">Calculate</button></td>
+                        </tr>
+                        <tr>
+                            <td class="identifier">PMT :</td>
+                            <td colspan="2">
+                                <select id="beg-or-end">
+                                    <option id="pmt-end" value="END">END</option>
+                                    <option id="pmt-begin" value="BEGIN">BEGIN</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
         
