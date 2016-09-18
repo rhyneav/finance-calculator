@@ -22,9 +22,13 @@
     margin-bottom: 24px;
 }
 
-#hide-info {
+.show-hide {
     font-size: 10px;
     color: grey;
+}
+
+#show-text {
+    text-align: right;
 }
 
 @media screen and (min-width: 980px) {
@@ -48,6 +52,10 @@
     .break {
         display: none;
     }
+}
+
+.hide {
+    visibility: hidden;
 }
 
 .text {
@@ -142,6 +150,7 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type="number"] {
     -moz-appearance: textfield;
 }

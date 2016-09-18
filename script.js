@@ -104,3 +104,13 @@ document.getElementById("btnFutureValue").addEventListener("click", function(){
     
     document.getElementById("future-value").value = _FutureValue.GetFutureValue();
 });
+
+document.getElementById("hide-info").addEventListener("click", function(){
+    document.getElementById("not-application").className = "hide";
+    document.getElementById("show-text").className = document.getElementById("show-text").className.replace( /(?:^|\s)hide(?!\S)/g , '' )
+});
+
+document.getElementById("show-info").addEventListener("click", function(){
+    document.getElementById("not-application").className = document.getElementById("not-application").className.replace( /(?:^|\s)hide(?!\S)/g , '' )
+    document.getElementById("show-text").className = "hide";
+});
