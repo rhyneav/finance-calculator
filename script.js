@@ -60,7 +60,7 @@ function clsFinanceCalculator() {
             PV += PMT * (1 - (1 / coeff)) / I;
         }
         
-        return PV;
+        return PV.toFixed(4);
         
     };
     
@@ -80,11 +80,33 @@ function clsFinanceCalculator() {
         
         
         FV = FV * -1;
-        return FV;
+        
+        return FV.toFixed(4);
         
     };
     
     this.GetPayment = function() {
+        
+        if (AnnuityDue) {
+            // Annuity Payment (PV)
+            var coeff = Math.pow(1 + I, -1 * N);
+            PMT = PV * (I / (1 - coeff)) * (1 / (1 + I));
+            
+            // Annuity Payment (FV)
+            coeff = Math.pow(1 + I, N);
+            PMT += FV * (I / (coeff - 1)) * (1 / (1 + I));
+            
+        } else {
+            // Annuity Payment (PV)
+            coeff = Math.pow(1 + I, -1 * N);
+            PMT = (I * PV) / (1- coeff);
+            
+            // Annuity Payment (FV)
+            coeff = Math.pow(1 + I, N);
+            PMT += (I * FV) / (coeff - 1);
+        }
+        
+        return PMT.toFixed(4);
         
     }
 }
@@ -105,12 +127,23 @@ document.getElementById("btnFutureValue").addEventListener("click", function(){
     document.getElementById("future-value").value = _FutureValue.GetFutureValue();
 });
 
+document.getElementById("btnPayment").addEventListener("click", function(){
+    var _Payment = new clsFinanceCalculator();
+    
+    _Payment.SetAllValues();
+    
+    document.getElementById("payment").value = _Payment.GetPayment();
+});
+
+
+
+// Information show/hide buttons
 document.getElementById("hide-info").addEventListener("click", function(){
     document.getElementById("not-application").className = "hide";
-    document.getElementById("show-text").className = document.getElementById("show-text").className.replace( /(?:^|\s)hide(?!\S)/g , '' )
+    document.getElementById("show-text").className = document.getElementById("show-text").className.replace( /(?:^|\s)hide(?!\S)/g , '' );
 });
 
 document.getElementById("show-info").addEventListener("click", function(){
-    document.getElementById("not-application").className = document.getElementById("not-application").className.replace( /(?:^|\s)hide(?!\S)/g , '' )
+    document.getElementById("not-application").className = document.getElementById("not-application").className.replace( /(?:^|\s)hide(?!\S)/g , '' );
     document.getElementById("show-text").className = "hide";
 });
