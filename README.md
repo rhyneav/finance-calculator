@@ -1,2 +1,2 @@
 # finance-calculator
-Simple easy calc for Finance students
+Simple easy calc for Finance students [WIP]
